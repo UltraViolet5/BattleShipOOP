@@ -1,6 +1,6 @@
 ﻿namespace battleship
 {
-    public class input
+    public static class input
     {
         
     }

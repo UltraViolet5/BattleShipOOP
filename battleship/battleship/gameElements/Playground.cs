@@ -1,4 +1,4 @@
-﻿namespace battleship.Content
+﻿namespace battleship.gameElements
 {
     public class Playground
     {
