@@ -2,10 +2,12 @@
 
 namespace battleship.gameElements
 {
-    public class Fields
+    public class Field
     {
         
         public SateOfField State { get; set; }
+        
+        public Ship Ship { get; set; }
         
         
     }
