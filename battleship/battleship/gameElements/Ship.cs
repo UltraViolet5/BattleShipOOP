@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using battleship.enums;
 
 
@@ -23,9 +24,10 @@ namespace battleship.gameElements
             this.Position = position;
         }
 
-        public Coordinates[] PlaceShip(Position position, Coordinates place, int quantityOfMast)
+        public List<Coordinates> PlaceShip(Position position, Coordinates place, int quantityOfMast)
         {
-            Coordinates[] coordinates = new []{place};
+            List<Coordinates> coordinates = new List<Coordinates>();
+            coordinates.Add(place);
             
             switch (position)
             {
@@ -34,7 +36,7 @@ namespace battleship.gameElements
                     for (int i = 0; i < quantityOfMast; i++)
                     {
                         place.x += 1;
-                        coordinates.Append(place);
+                        coordinates.Add(place);
                     }
 
                     return coordinates;
@@ -43,7 +45,7 @@ namespace battleship.gameElements
                     for (int i = 0; i < quantityOfMast; i++)
                     {
                         place.y += 1;
-                        coordinates.Append(place);
+                        coordinates.Add(place);
                     }
                     return coordinates;
                 default:
