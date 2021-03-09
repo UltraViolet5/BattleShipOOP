@@ -12,10 +12,10 @@ namespace battleship.gameElements
         public Players Player { get; set; }
 
         public Coordinates Place { get; set; }
-        
+
         private Position Position { get; set; }
 
-        
+
         public Ship(int quantityOfMast, Players player, Coordinates place, Position position)
         {
             this.QuantityOfMast = quantityOfMast;
@@ -26,44 +26,33 @@ namespace battleship.gameElements
 
         public List<Coordinates> PlaceShip()
         {
-            List<Coordinates> coordinates = new List<Coordinates>();
-            coordinates.Add(this.Place);
-            
+            List<Coordinates> coordinates = new List<Coordinates> {this.Place};
+
             switch (Position)
             {
-                case Position.Horizontal :
-                    
+                case Position.Horizontal:
+
                     for (int i = 0; i < this.QuantityOfMast; i++)
                     {
                         Coordinates newCoordinates = Place;
-                        newCoordinates.x += i;
+                        newCoordinates.x += i + 1;
                         coordinates.Add(newCoordinates);
                     }
 
                     return coordinates;
-                
+
                 case Position.Vertical:
                     for (int i = 0; i < this.QuantityOfMast; i++)
                     {
                         Coordinates newCoordinates = Place;
-                        newCoordinates.y += i;
+                        newCoordinates.y += i + 1;
                         coordinates.Add(newCoordinates);
                     }
+
                     return coordinates;
                 default:
                     return coordinates;
             }
-            
-            
         }
-
-       
-          
-            
-            
-        
-
     }
-    
-    
 }
