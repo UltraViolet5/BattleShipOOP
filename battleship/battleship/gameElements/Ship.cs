@@ -24,28 +24,30 @@ namespace battleship.gameElements
             this.Position = position;
         }
 
-        public List<Coordinates> PlaceShip(Position position, Coordinates place, int quantityOfMast)
+        public List<Coordinates> PlaceShip()
         {
             List<Coordinates> coordinates = new List<Coordinates>();
-            coordinates.Add(place);
+            coordinates.Add(this.Place);
             
-            switch (position)
+            switch (Position)
             {
                 case Position.Horizontal :
                     
-                    for (int i = 0; i < quantityOfMast; i++)
+                    for (int i = 0; i < this.QuantityOfMast; i++)
                     {
-                        place.x += 1;
-                        coordinates.Add(place);
+                        Coordinates newCoordinates = Place;
+                        newCoordinates.x += 1;
+                        coordinates.Add(newCoordinates);
                     }
 
                     return coordinates;
                 
                 case Position.Vertical:
-                    for (int i = 0; i < quantityOfMast; i++)
+                    for (int i = 0; i < this.QuantityOfMast; i++)
                     {
-                        place.y += 1;
-                        coordinates.Add(place);
+                        Coordinates newCoordinates = Place;
+                        newCoordinates.y += 1;
+                        coordinates.Add(newCoordinates);
                     }
                     return coordinates;
                 default:
