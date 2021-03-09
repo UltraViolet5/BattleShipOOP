@@ -7,7 +7,7 @@ namespace battleship.gameElements
         
         public SateOfField State { get; set; }
         
-        public bool ContainMast { get; set; }
+        public bool ContainShip { get; set; }
         
         
     }

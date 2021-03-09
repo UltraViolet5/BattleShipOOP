@@ -4,6 +4,8 @@
     {
 
         public Field[,] Board { get; set; }
+        
+        
     
     }
 }

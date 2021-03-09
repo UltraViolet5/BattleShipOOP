@@ -5,7 +5,6 @@
         Fired,
         Free,
         Hit,
-        HitSunk,
-        Mast
+        HitSunk
     }
 }
