@@ -46,9 +46,8 @@ namespace battleship.gameElements
                         coordinates.Append(place);
                     }
                     return coordinates;
-                    
-                   
-                
+                default:
+                    return coordinates;
             }
             
             
