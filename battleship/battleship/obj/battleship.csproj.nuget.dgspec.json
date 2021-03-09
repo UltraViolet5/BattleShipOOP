@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\op c#\\BattleShipOOP\\battleship\\battleship\\battleship.csproj": {}
+    "C:\\Users\\queiker\\source\\BattleShipOOP\\battleship\\battleship\\battleship.csproj": {}
   },
   "projects": {
-    "E:\\op c#\\BattleShipOOP\\battleship\\battleship\\battleship.csproj": {
+    "C:\\Users\\queiker\\source\\BattleShipOOP\\battleship\\battleship\\battleship.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\op c#\\BattleShipOOP\\battleship\\battleship\\battleship.csproj",
+        "projectUniqueName": "C:\\Users\\queiker\\source\\BattleShipOOP\\battleship\\battleship\\battleship.csproj",
         "projectName": "battleship",
-        "projectPath": "E:\\op c#\\BattleShipOOP\\battleship\\battleship\\battleship.csproj",
-        "packagesPath": "C:\\Users\\Krzysiek\\.nuget\\packages\\",
-        "outputPath": "E:\\op c#\\BattleShipOOP\\battleship\\battleship\\obj\\",
+        "projectPath": "C:\\Users\\queiker\\source\\BattleShipOOP\\battleship\\battleship\\battleship.csproj",
+        "packagesPath": "C:\\Users\\queiker\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\queiker\\source\\BattleShipOOP\\battleship\\battleship\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Krzysiek\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\queiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

@@ -2,7 +2,7 @@
 {
     public enum Players
     {
-        FirstPLayer,
+        FirstPlayer,
         SecondPlayer
     }
 }

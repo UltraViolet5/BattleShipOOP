@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5wuV7R79Hd7Q2+agb579om5I/ul2yZtTK2QCAKvydEjim4nJTTpauftKe2WhnktXYHhfO8TL2yArwNBkzen5TA==",
+  "dgSpecHash": "0RLvcgpwr9HpxNkSIdE9dr0Ys1d9K8VgyCxfON777HdcIyZO9LinHIIRJRSQ9+sBNNoJwDFM8U9DQDGxazzUWw==",
   "success": true,
-  "projectFilePath": "E:\\op c#\\BattleShipOOP\\battleship\\battleship\\battleship.csproj",
+  "projectFilePath": "C:\\Users\\queiker\\source\\BattleShipOOP\\battleship\\battleship\\battleship.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
