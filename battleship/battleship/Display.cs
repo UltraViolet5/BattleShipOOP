@@ -1,4 +1,6 @@
 ﻿using System;
+using battleship.enums;
+
 namespace battleship
 {
     public class Display
@@ -35,12 +37,13 @@ PLAYER A       PLAYER B
 
         }
 
-        public void Menu(int version)
+        public void Menu(DisplayText version)
         {
             //version 0 Welcome text
             switch (version)
             {
-                case 0:
+                case DisplayText.WelcomeGraphic :
+
                 Console.WriteLine(" _    _      _                                 ");
                 Console.WriteLine("| |  | |    | |                                ");
                 Console.WriteLine("| |  | | ___| | ___ ___  _ __ ___   ___        ");
@@ -69,7 +72,7 @@ PLAYER A       PLAYER B
 
                 break;
                 
-                case 1: // Welcome menu
+                case DisplayText.WelcomeMenu: // Welcome menu
 
                     Console.WriteLine("*********************************************");
                     Console.WriteLine("*                                           *");
@@ -82,7 +85,7 @@ PLAYER A       PLAYER B
 
 
                     break;
-                case 2: // info about game
+                case DisplayText.InfoAboutGame: // info about game
                     Console.WriteLine("****************************************************************************");
                     Console.WriteLine("*                                                                          *");
                     Console.WriteLine("* Battleship (also Battleships or Sea Battle[1]) is a strategy type        *");
@@ -100,6 +103,17 @@ PLAYER A       PLAYER B
                     Console.WriteLine("*                                                                          *");
                     Console.WriteLine("****************************************************************************");
                     break;
+
+                case DisplayText.BoardSizeInput: // input board size
+
+                    Console.WriteLine("*********************************************");
+                    Console.WriteLine("*                                           *");
+                    Console.WriteLine("*    Put board size (5 - 10)                *");
+                    Console.WriteLine("*                                           *");
+                    Console.WriteLine("*********************************************");
+
+                    break;
+
             }
         }
     }

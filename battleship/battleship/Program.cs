@@ -6,20 +6,21 @@ namespace battleship
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
 
             Display display = new Display();
-            display.Menu(0); // welcome text
+            display.Menu(enums.DisplayText.WelcomeGraphic); // welcome text
 
-            display.Menu(1); // welcome menu
+            display.Menu(enums.DisplayText.WelcomeMenu ); // welcome menu
 
-            // display.Menu(2);// info about game
-
+            //display.Menu(enums.DisplayText.InfoAboutGame);// info about game
+            display.Menu(enums.DisplayText.BoardSizeInput);
+            int row = Convert.ToInt32(Console.ReadLine());
             //powiedzmy że chcemy planszę o wymiarach 5*5
-            Board board_player_A = new Board(5);
-            Board board_player_B = new Board(5);
+            Board boardPlayerA = new Board(row);
+            Board boardPlayerB = new Board(row);
 
-            display.Ocean(board_player_A, board_player_B);
+            display.Ocean(boardPlayerA, boardPlayerB);
 
 
 
