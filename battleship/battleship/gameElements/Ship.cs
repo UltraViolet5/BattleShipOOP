@@ -32,20 +32,20 @@ namespace battleship.gameElements
             {
                 case Position.Horizontal:
 
-                    for (int i = 0; i < this.QuantityOfMast; i++)
+                    for (int i = 1; i < this.QuantityOfMast; i++)
                     {
                         Coordinates newCoordinates = Place;
-                        newCoordinates.x += i + 1;
+                        newCoordinates.x += i ;
                         coordinates.Add(newCoordinates);
                     }
 
                     return coordinates;
 
                 case Position.Vertical:
-                    for (int i = 0; i < this.QuantityOfMast; i++)
+                    for (int i = 1; i < this.QuantityOfMast; i++)
                     {
                         Coordinates newCoordinates = Place;
-                        newCoordinates.y += i + 1;
+                        newCoordinates.y += i ;
                         coordinates.Add(newCoordinates);
                     }
 
