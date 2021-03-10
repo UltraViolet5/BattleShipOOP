@@ -24,9 +24,14 @@ namespace battleship.gameElements
                     _ => "█"
                 };
             }
-            private set{}
+            
         }
 
+        public Field( SateOfField state, bool containShip = false)
+        {
+            this.State = state;
+            this.ContainShip = containShip;
+        }
 
     }
 }
