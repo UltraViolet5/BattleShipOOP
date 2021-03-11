@@ -24,7 +24,7 @@ namespace battleship.gameElements
             this.Position = position;
         }
 
-        public List<Coordinates> PlaceShip()
+        public List<Coordinates> GetShipCoordinates()
         {
             List<Coordinates> coordinates = new List<Coordinates> {this.Place};
 
