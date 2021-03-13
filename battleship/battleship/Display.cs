@@ -15,24 +15,29 @@ namespace battleship
         */
 
 
-        public void Ocean(Board Ocean_player_A, Board Ocean_player_B)
+        public void Ocean(Board Ocean_player_A, Board Ocean_player_B, int row)
         {
-/*
-Zerowa linia zaczyna się od opisu plansz graczy A i B
-pierwsza linia zazczyna się od dwuch spacji potem pierwsza litera alfabetu potem spacja i druga alfabetu potem spacja i trzecia listera
+            Console.Write("PLAYER A       ");
+            // ma być 6 spacji dla 5 znakowej planszy
+            //for(int i = 0; i<=)
+            Console.Write("PLAYER B");
 
-Od drugiej lini zaczyna się od cyfra lini potem spacja potem pozycja okrętu 0 po Y i 0 po X potem 0 po Y i 1 po X potem 0 po Y i 2 po X  
+            /*
+            Zerowa linia zaczyna się od opisu plansz graczy A i B
+            pierwsza linia zazczyna się od dwuch spacji potem pierwsza litera alfabetu potem spacja i druga alfabetu potem spacja i trzecia listera
+
+            Od drugiej lini zaczyna się od cyfra lini potem spacja potem pozycja okrętu 0 po Y i 0 po X potem 0 po Y i 1 po X potem 0 po Y i 2 po X  
 
 
-PLAYER A       PLAYER B
-  A B C D E F  A B C D E F  
-1 O O O O O O  O O O O O O 1
-2 O O O O O O  O O O O O O 2
-3 O O O O O O  O O O O O O 3
-4 O O O O O O  O O O O O O 4
-5 O O O O O O  O O O O O O 5
-  A B C D E F  A B C D E F  
-*/
+            PLAYER A       PLAYER B
+              A B C D E F  A B C D E F  
+            1 O O O O O O  O O O O O O 1
+            2 O O O O O O  O O O O O O 2
+            3 O O O O O O  O O O O O O 3
+            4 O O O O O O  O O O O O O 4
+            5 O O O O O O  O O O O O O 5
+              A B C D E F  A B C D E F  
+            */
 
 
         }

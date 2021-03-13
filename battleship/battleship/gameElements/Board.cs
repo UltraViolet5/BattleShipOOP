@@ -16,16 +16,11 @@ namespace battleship
         public Board(int size = 5) // konsturktor tworzy ocean czyli listę dwuwymiarową wypełnioną obiktami typu field
             {
 
-            /*
-            Field field = new Field(enums.SateOfField.Free, false);
-            List<Field> listFields = new List<Field> {field, field, field, field, field };
-            ocean = new List<List<Field>> { listFields, listFields, listFields, listFields, listFields };
-            */
             ocean = new List<List<Field>> { };
-
+        
             for(int y = 0; y <= size - 1 ; y ++)
             {
-                ocean.Add(new List<Field> { /*new Field(enums.SateOfField.Free, false)*/ });
+                ocean.Add(new List<Field> {  });
                 for (int x = 0; x <= size - 1; x++)
                 {
                     ocean[y].Add(new Field(enums.SateOfField.Free, false));
