@@ -3,16 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using battleship.gameElements;
+
 
 namespace battleship
 {
     public class Board
         {
-        public int[,] ocean; // to powinna być dwu wymiarowa tablica obiektów typu field
-        
-        public Board(int size)
+        //public int[,] ocean; // to powinna być dwu wymiarowa tablica obiektów typu field
+        public List<List<Field>> ocean;
+
+        public Board(int size = 5) // konsturktor tworzy ocean czyli listę dwuwymiarową wypełnioną obiktami typu field
             {
-                ocean = new int[size, size];
+
+            /*
+            Field field = new Field(enums.SateOfField.Free, false);
+            List<Field> listFields = new List<Field> {field, field, field, field, field };
+            ocean = new List<List<Field>> { listFields, listFields, listFields, listFields, listFields };
+            */
+            ocean = new List<List<Field>> { };
+
+            for(int y = 0; y <= size - 1 ; y ++)
+            {
+                ocean.Add(new List<Field> { /*new Field(enums.SateOfField.Free, false)*/ });
+                for (int x = 0; x <= size - 1; x++)
+                {
+                    ocean[y].Add(new Field(enums.SateOfField.Free, false));
+
+                }
+                
             }
+
+
+
         }
+    }
 }
