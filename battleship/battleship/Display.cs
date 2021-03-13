@@ -17,10 +17,35 @@ namespace battleship
 
         public void Ocean(Board Ocean_player_A, Board Ocean_player_B, int row)
         {
+            
+            // Pierwsza linia
             Console.Write("PLAYER A       ");
-            // ma być 6 spacji dla 5 znakowej planszy
+            // ma być 7 spacji dla 5 znakowej planszy
             //for(int i = 0; i<=)
-            Console.Write("PLAYER B");
+            //jeżeli plansza jest większa od 5 np x 5+x to spacji ma być 2*x
+            Console.Write("PLAYER B\n");
+            //Druga linia
+            Console.Write("  "); //najpierw dwie spacje 
+            
+            for(int i = 0; i <= row; i++)
+            {
+                //Potem ma być duża litera alfabetu w pętli w zależności od row A, B, C, D,E,F,G,H,I,J,K,L,M
+                Console.Write("A");//litery mają się zmieniać nie tylko a 
+                //potem spacja
+                Console.Write(" ");
+
+            }
+            
+            Console.Write(" ");
+            for (int i = 0; i <= row; i++)
+            {
+                //Potem ma być duża litera alfabetu w pętli w zależności od row A, B, C, D,E,F,G,H,I,J,K,L,M
+                Console.Write("A"); //litery mają się zmieniać nie tylko a 
+                //potem spacja
+                Console.Write(" ");
+
+            }
+
 
             /*
             Zerowa linia zaczyna się od opisu plansz graczy A i B
