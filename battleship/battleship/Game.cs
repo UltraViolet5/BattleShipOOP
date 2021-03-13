@@ -9,20 +9,23 @@ namespace battleship
         
         public int BoardSize { get; set; }
         
-        public Playground playgroundFirstPlayer { get; set; }
-        public Playground playgroundSecondPlayer { get; set; }
+        public Playground PlaygroundFirstPlayer { get; set; }
+        public Playground PlaygroundSecondPlayer { get; set; }
         
         
         public Game(int boardSize)
         {
             this.BoardSize = boardSize;
+            CreatePlaygrounds();
         }
 
-        public void Playgrounds()
+        public void CreatePlaygrounds()
         {
-            this.playgroundFirstPlayer = new Playground(this.BoardSize, Players.FirstPlayer);
-            this.playgroundSecondPlayer = new Playground(this.BoardSize, Players.SecondPlayer);
-            
+            this.PlaygroundFirstPlayer = new Playground(this.BoardSize, Players.FirstPlayer);
+            this.PlaygroundSecondPlayer = new Playground(this.BoardSize, Players.SecondPlayer);
+            PlaygroundFirstPlayer.CreateBoard();
+            PlaygroundSecondPlayer.CreateBoard();
+
         }
             
     }

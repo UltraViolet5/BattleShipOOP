@@ -45,7 +45,7 @@ namespace battleship.gameElements
                         
                     case enums.SateOfField.HitSunk:
                         return "S"; 
-                        
+                     
                     default:
                         return "W";
                         
