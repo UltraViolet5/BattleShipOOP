@@ -85,7 +85,7 @@ namespace battleship
             int row = Ocean_player.ocean[0].Count; // pobiera z planszy playera a szerokość planszy szerokości muszą być takie same
 
             // Pierwsza linia
-            Console.Write("PLAYER A\n");
+            //Console.Write("PLAYER A\n");
             // ma być 7 spacji dla 5 znakowej planszy
             //jeżeli plansza jest większa od 5 np x 5+x to spacji ma być 2*x
 

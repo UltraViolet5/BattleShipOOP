@@ -15,10 +15,12 @@ namespace battleship
             Board boardPlayerB = new Board(row);
 
 
-            display.Ocean(boardPlayerA, boardPlayerB);
+            display.Ocean(boardPlayerA, boardPlayerB);// wyświetla ocean czyli dwie plansze graczy
 
-            boardPlayerA.ocean[0][0].ContainShip = true;
-            display.Board(boardPlayerA);
+            boardPlayerA.ocean[0][0].ContainShip = true; // w pozycji [y][x] => [0][0] stawiany jest statek więc na pojedyńczej
+                                                         //planszy się wyświetli #
+            
+            display.Board(boardPlayerA);// wyświetla planszę jednego gracza i pokazuje gdzie są statki
 
 
 
