@@ -14,46 +14,142 @@ namespace battleship
         No Console.WriteLine() happens outside of Display class.
         */
 
+        private string alphabet_char(int char_nr)
+        {
+            switch (char_nr)
+            {
+                case 1:
+                    return "A";
+                case 2:
+                    return "B";
+                case 3:
+                    return "C";
+                case 4:
+                    return "D";
+                case 5:
+                    return "E";
+                case 6:
+                    return "F";
+                case 7:
+                    return "G";
+                case 8:
+                    return "H";
+                case 9:
+                    return "I";
+                case 10:
+                    return "J";
+                case 11:
+                    return "K";
+                case 12:
+                    return "L";
+                case 13:
+                    return "M";
+                case 14:
+                    return "N";
+                case 15:
+                    return "O";
+                case 16:
+                    return "P";
+                case 17:
+                    return "R";
+                case 18:
+                    return "S";
+                case 19:
+                    return "T";
+                case 20:
+                    return "U";
+                case 21:
+                    return "W";
+                case 22:
+                    return "Y";
+                case 23:
+                    return "Z";
+                default:
+                    return " ";
+
+            }
+        }
 
         public void Ocean(Board Ocean_player_A, Board Ocean_player_B, int row)
         {
             
             // Pierwsza linia
-            Console.Write("PLAYER A       ");
+            Console.Write("PLAYER A     ");
             // ma być 7 spacji dla 5 znakowej planszy
-            //for(int i = 0; i<=)
             //jeżeli plansza jest większa od 5 np x 5+x to spacji ma być 2*x
-            Console.Write("PLAYER B\n");
-            //Druga linia
-            Console.Write("  "); //najpierw dwie spacje 
+            for(int i = 5; i<row; i++)
+            {
+                Console.Write("  ");
+            }
             
-            for(int i = 0; i <= row; i++)
+            Console.Write("PLAYER B\n");
+            
+            //Druga linia
+            Console.Write("   "); //najpierw trzy spacje 
+            
+            for(int i = 0; i < row; i++)
             {
                 //Potem ma być duża litera alfabetu w pętli w zależności od row A, B, C, D,E,F,G,H,I,J,K,L,M
-                Console.Write("A");//litery mają się zmieniać nie tylko a 
+                Console.Write(alphabet_char(i + 1)); // są drukowane kolejne litery alfabetu 
                 //potem spacja
                 Console.Write(" ");
-
             }
             
             Console.Write(" ");
-            for (int i = 0; i <= row; i++)
+            for (int i = 0; i < row; i++)
             {
                 //Potem ma być duża litera alfabetu w pętli w zależności od row A, B, C, D,E,F,G,H,I,J,K,L,M
-                Console.Write("A"); //litery mają się zmieniać nie tylko a 
+                Console.Write(alphabet_char(i+1)); // są drukowane kolejne litery alfabetu
                 //potem spacja
                 Console.Write(" ");
+            }
+            Console.Write("\n");
 
+            for (int y = 0; y < row; y++)
+            {
+                if (y+1 < 10)//jeżeli liczba jest jedno znakowa to przed liczbą ma być jedna spacja
+                {
+                    Console.Write(" ");
+                }
+                Console.Write(Convert.ToString(y+1)); // w pierwszej lini to będzie 1
+                Console.Write(" ");
+                for(int x = 0; x < row; x++)
+                {
+                    Console.Write( Ocean_player_A.ocean[y][x].Symbol );
+                    Console.Write(" ");
+                }
+                Console.Write(" ");
+                for (int x = 0; x < row; x++)
+                {
+                    Console.Write(Ocean_player_B.ocean[y][x].Symbol);
+                    Console.Write(" ");
+                }
+                Console.Write(Convert.ToString(y + 1));
+                Console.Write("\n");
             }
 
+            // Ostatnia linia jest taka sama jak druga
+            Console.Write("   "); //najpierw trzy spacje 
+
+            for (int i = 0; i < row; i++)
+            {
+                //Potem ma być duża litera alfabetu w pętli w zależności od row A, B, C, D,E,F,G,H,I,J,K,L,M
+                Console.Write(alphabet_char(i + 1)); // są drukowane kolejne litery alfabetu 
+                //potem spacja
+                Console.Write(" ");
+            }
+
+            Console.Write(" ");
+            for (int i = 0; i < row; i++)
+            {
+                //Potem ma być duża litera alfabetu w pętli w zależności od row A, B, C, D,E,F,G,H,I,J,K,L,M
+                Console.Write(alphabet_char(i + 1)); // są drukowane kolejne litery alfabetu
+                //potem spacja
+                Console.Write(" ");
+            }
+            Console.Write("\n");
 
             /*
-            Zerowa linia zaczyna się od opisu plansz graczy A i B
-            pierwsza linia zazczyna się od dwuch spacji potem pierwsza litera alfabetu potem spacja i druga alfabetu potem spacja i trzecia listera
-
-            Od drugiej lini zaczyna się od cyfra lini potem spacja potem pozycja okrętu 0 po Y i 0 po X potem 0 po Y i 1 po X potem 0 po Y i 2 po X  
-
-
             PLAYER A       PLAYER B
               A B C D E F  A B C D E F  
             1 O O O O O O  O O O O O O 1
@@ -63,7 +159,6 @@ namespace battleship
             5 O O O O O O  O O O O O O 5
               A B C D E F  A B C D E F  
             */
-
 
         }
 
