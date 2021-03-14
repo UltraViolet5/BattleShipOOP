@@ -69,12 +69,99 @@ namespace battleship
 
             }
         }
-
-        public void Ocean(Board Ocean_player_A, Board Ocean_player_B, int row)
+        public void Board(Board Ocean_player)
         {
+            /*
+            PLAYER A     
+              A B C D E F  
+            1 O O O O O O 1
+            2 O O O O O O 2
+            3 O O O O O O 3
+            4 O O O O O O 4
+            5 O O O O O O 5
+              A B C D E F 
+            */
+
+            int row = Ocean_player.ocean[0].Count; // pobiera z planszy playera a szerokość planszy szerokości muszą być takie same
 
             // Pierwsza linia
-            Console.Write("PLAYER A      ");
+            Console.Write("PLAYER A\n");
+            // ma być 7 spacji dla 5 znakowej planszy
+            //jeżeli plansza jest większa od 5 np x 5+x to spacji ma być 2*x
+
+            //Druga linia
+            Console.Write("   "); //najpierw trzy spacje 
+
+            for (int i = 0; i < row; i++)
+            {
+                //Potem ma być duża litera alfabetu w pętli w zależności od row A, B, C, D,E,F,G,H,I,J,K,L,M
+                Console.Write(alphabet_char(i + 1)); // są drukowane kolejne litery alfabetu 
+                //potem spacja
+                Console.Write(" ");
+            }
+
+            Console.Write("\n");
+
+            // trzecia linia i kolejne
+            for (int y = 0; y < row; y++)
+            {
+                if (y + 1 < 10)//jeżeli liczba jest jedno znakowa to przed liczbą ma być jedna spacja
+                {
+                    Console.Write(" ");
+                }
+                Console.Write(Convert.ToString(y + 1)); // w pierwszej lini to będzie 1
+                Console.Write(" ");
+                for (int x = 0; x < row; x++)
+                {
+                    if (Ocean_player.ocean[y][x].ContainShip == true)
+                    {
+                        Console.Write("#"); //jak jest statek
+
+                    }
+                    else
+                    {
+                        Console.Write("O"); //jak niema statku
+                    }
+
+                    Console.Write(" "); // spacja oddzielająca kolumny
+                }
+                Console.Write(Convert.ToString(y + 1));
+                Console.Write("\n");
+            }
+
+            // Ostatnia linia jest taka sama jak druga
+
+            Console.Write("   "); //najpierw trzy spacje 
+
+            for (int i = 0; i < row; i++)
+            {
+                //Potem ma być duża litera alfabetu w pętli w zależności od row A, B, C, D,E,F,G,H,I,J,K,L,M
+                Console.Write(alphabet_char(i + 1)); // są drukowane kolejne litery alfabetu 
+                //potem spacja
+                Console.Write(" ");
+            }
+
+            Console.Write("\n");
+
+        }
+
+
+        public void Ocean(Board Ocean_player_A, Board Ocean_player_B)
+        {
+            /*
+            PLAYER A       PLAYER B
+              A B C D E F  A B C D E F  
+            1 O O O O O O  O O O O O O 1
+            2 O O O O O O  O O O O O O 2
+            3 O O O O O O  O O O O O O 3
+            4 O O O O O O  O O O O O O 4
+            5 O O O O O O  O O O O O O 5
+              A B C D E F  A B C D E F  
+            */
+            int row = Ocean_player_A.ocean[0].Count; // pobiera z planszy playera a szerokość planszy szerokości muszą być takie same
+
+            // Pierwsza linia
+            Console.Write("PLAYER A     ");
             // ma być 7 spacji dla 5 znakowej planszy
             //jeżeli plansza jest większa od 5 np x 5+x to spacji ma być 2*x
             for (int i = 5; i < row; i++)
@@ -148,17 +235,6 @@ namespace battleship
                 Console.Write(" ");
             }
             Console.Write("\n");
-
-            /*
-            PLAYER A       PLAYER B
-              A B C D E F  A B C D E F  
-            1 O O O O O O  O O O O O O 1
-            2 O O O O O O  O O O O O O 2
-            3 O O O O O O  O O O O O O 3
-            4 O O O O O O  O O O O O O 4
-            5 O O O O O O  O O O O O O 5
-              A B C D E F  A B C D E F  
-            */
 
         }
 
