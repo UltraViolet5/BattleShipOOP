@@ -11,9 +11,11 @@ namespace battleship.gameElements
 
         public Players Player { get; set; }
 
-        public Coordinates Place { get; set; }
+        public Coordinates Place { get; set; } 
 
         private Position Position { get; set; }
+
+        
 
 
         public Ship(int quantityOfMast, Players player, Coordinates place, Position position)

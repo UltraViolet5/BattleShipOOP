@@ -14,7 +14,7 @@ namespace battleship
         public List<List<Field>> ocean;
 
         public Board(int size = 5) // konsturktor tworzy ocean czyli listę dwuwymiarową wypełnioną obiktami typu field
-            {
+        {
 
             ocean = new List<List<Field>> { };
         
@@ -29,8 +29,26 @@ namespace battleship
                 
             }
 
+        }
+
+        public void PlaceShip(List<Ship> ShipList)
+        {
+            List<Coordinates> shipCoordList;
+
+            foreach (Ship ship in  ShipList)
+            {
+                shipCoordList = ship.GetShipCoordinates();
+                foreach( Coordinates coord in shipCoordList)
+                {
+                    ocean[coord.y][coord.x].ContainShip = true;
+
+                }
+
+
+            }
 
 
         }
+
     }
 }
