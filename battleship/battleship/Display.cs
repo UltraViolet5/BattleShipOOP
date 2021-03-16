@@ -61,9 +61,12 @@ namespace battleship
                 case 21:
                     return "W";
                 case 22:
-                    return "Y";
+                    return "X";
                 case 23:
+                    return "Y";
+                case 24:
                     return "Z";
+
                 default:
                     return " ";
 
@@ -316,6 +319,10 @@ namespace battleship
                     break;
 
             }
+        }
+        public void Write(string text)
+        {
+            Console.WriteLine(text);
         }
     }
 }

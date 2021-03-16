@@ -13,7 +13,7 @@ namespace battleship
         //public int[,] ocean; // to powinna być dwu wymiarowa tablica obiektów typu field
         public List<List<Field>> ocean;
 
-        public Board(int size = 5) // konsturktor tworzy ocean czyli listę dwuwymiarową wypełnioną obiktami typu field
+        public Board(int size ) // konsturktor tworzy ocean czyli listę dwuwymiarową wypełnioną obiktami typu field
         {
 
             ocean = new List<List<Field>> { };

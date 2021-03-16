@@ -9,6 +9,12 @@ namespace battleship
     {
         static void Main(string[] args)
         {
+            
+            Game game = new Game();
+            
+            
+            
+            /*
             Display display = new Display();
             
             Console.WriteLine("Podaj szerokość planszy : ");
@@ -53,8 +59,8 @@ namespace battleship
 
             //boardPlayerA.ocean[0][0].ContainShip = true;
             display.Board(boardPlayerA);
-
-
+            */
+            
 
         }
     }
