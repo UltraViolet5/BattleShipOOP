@@ -7,15 +7,7 @@ namespace battleship
 {
     public class Display
     {
-        /*
-        Implement class Display and its methods.
-        Class Display prints the game menu.
-        Class Display prints the board during manual ship placement process.
-        Class Display prints the gameplay.
-        Class Display prints the outcome of the game when it's over.
-        No Console.WriteLine() happens outside of Display class.
-        */
-
+        
         private string alphabet_char(int char_nr)
         {
             switch (char_nr)

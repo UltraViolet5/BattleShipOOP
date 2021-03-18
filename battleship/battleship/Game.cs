@@ -29,9 +29,10 @@ namespace battleship
             CreatePlaygrounds();
             */
             Display display = new Display();
-            display.Menu(DisplayText.BoardSizeInput); // 
-            
             Input input = new Input();
+
+            display.Clear();
+            display.Menu(DisplayText.BoardSizeInput);  
             
             BoardSize = input.GetBoardSize();
 
@@ -106,7 +107,6 @@ namespace battleship
                 PlayerShips.Add(ship);
                 // wyczyść ekran
                 display.Clear();
-
                 // wyświetl planszę ze statkami
                 display.Board(this.PutShipsOnBoard(boardPlayer, PlayerShips));
 
@@ -137,7 +137,6 @@ namespace battleship
             // Wyświetl ekran rozpoczęcia bitwy 
             display.Menu(DisplayText.BattleshipBegin);
             
-            
             // Wyświetl pole bitwy - ocean
             display.Ocean(this.boardPlayerA, this.boardPlayerB);
 
@@ -146,21 +145,22 @@ namespace battleship
             {
                 Round(Players.FirstPlayer);
                 display.Clear();
+                CheckShips(enums.Players.SecondPlayer); // wprowadz zmiany w statkach na planszy gracza B
+                is_running = !IsWiner(enums.Players.FirstPlayer); // sprawdź czy gracz A jest zwycięzcą
                 display.Ocean(boardPlayerA, boardPlayerB);
-                // tutaj trzeba dodać kod sprawdzający czy któryś z graczy wygrał
 
-                
+                if (is_running == false)
+                {
+                    break;
+                }
+
                 Round(Players.SecondPlayer);
                 display.Clear();
+                CheckShips(enums.Players.FirstPlayer); // wprowadz zmiany w statkach na planszy gracza A
+                is_running = !IsWiner(enums.Players.SecondPlayer); // sprawdź czy gracz B jest zwycięzcą
                 display.Ocean(boardPlayerA, boardPlayerB);
-                // tutaj trzeba dodać kod sprawdzający czy któryś z graczy wygrał
 
             }
-
-
-
-
-
         }
 
         public void Round(enums.Players player)
@@ -205,7 +205,6 @@ namespace battleship
                 Free,// wolne pole F
                 Hit,// uderzony H
                 HitSunk // trafiony zatopiony S
-                    
                 */
 
                 // jeżeli wolne pole 
@@ -213,11 +212,6 @@ namespace battleship
                     if (boardPlayer.ocean[coord.y][coord.x].ContainShip == true)
                     {
                         boardPlayer.ocean[coord.y][coord.x].State = SateOfField.Hit;
-                        //poniżej powinna być funkcja sprawdzająca  czy wszystkie maszty są już zatopione
-                        // i wtedy jak tak to powinna zamienić maszty na sunk
-
-                        //tutaj powinna być funkcja sprawdzająca czy graczB już przegrał czy jescze nie
-
                     }
                     else
                     {
@@ -257,5 +251,74 @@ namespace battleship
             }
 
         }
+
+        public void CheckShips(enums.Players shotedPlayer )
+        {
+            /*
+            Fired,// ostrzelane pole bez statku
+            Free,// wolne pole
+            Hit,// uderzony
+            HitSunk // trafiony zatopiony
+            */
+            bool is_sunk;
+
+            if (shotedPlayer == Players.SecondPlayer)
+            {
+                // jeżeli była ostrzelana plansza gracza B
+                foreach ( Ship ship in shipPlayerB)
+                {
+                    is_sunk = true;
+                    foreach(Coordinates coord in ship.GetShipCoordinates() )
+                    {
+                        if(boardPlayerB.ocean[coord.y][coord.x].State == SateOfField.Free)
+                        {
+                            is_sunk = false;
+                        }
+                    }
+                    //jeżeli statek ma zatopione wszystkie maszty to zmień jego stan na zatopiony
+                    if(is_sunk == true)
+                    {
+                        foreach (Coordinates coord in ship.GetShipCoordinates())
+                        {
+                            boardPlayerB.ocean[coord.y][coord.x].State = SateOfField.HitSunk;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // jeżeli była ostrzelana plansza gracza A
+                foreach (Ship ship in shipPlayerA)
+                {
+                    is_sunk = true;
+                    foreach (Coordinates coord in ship.GetShipCoordinates())
+                    {
+                        if (boardPlayerA.ocean[coord.y][coord.x].State == SateOfField.Free)
+                        {
+                            is_sunk = false;
+                        }
+                    }
+                    //jeżeli statek ma zatopione wszystkie maszty to zmień jego stan na zatopiony
+                    if (is_sunk == true)
+                    {
+                        foreach (Coordinates coord in ship.GetShipCoordinates())
+                        {
+                            boardPlayerA.ocean[coord.y][coord.x].State = SateOfField.HitSunk;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        public bool IsWiner(enums.Players shoterPlayer)
+        {
+
+            return false;
+        }
+
+
+
+
     }
 }

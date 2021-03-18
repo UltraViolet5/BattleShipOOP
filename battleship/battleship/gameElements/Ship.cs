@@ -30,8 +30,6 @@ namespace battleship.gameElements
         {
             List<Coordinates> coordinates = new List<Coordinates> {this.Place};
             
-            
-
             switch (Position)
             {
                 case Position.Horizontal:

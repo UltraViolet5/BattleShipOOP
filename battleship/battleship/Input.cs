@@ -197,11 +197,24 @@ namespace battleship
                     return 99;// jak 99 to koordynata nie znaleziona
 
             }
-
-
-
         }
 
+        public int GetInt()
+        {
+            return Convert.ToInt32(Console.ReadLine()); //TODO: trzeba dodać odporność na błędy użytkownika jeżeli wprowadzi coś innego niż int
+        }
+
+        public string GetString()
+        {
+            return Console.ReadLine();
+        }
+
+        public void Pause()
+        {
+            Display display = new Display();
+            display.Write("Push any button .. ");
+            Console.ReadKey();
+        }
 
     }
 }

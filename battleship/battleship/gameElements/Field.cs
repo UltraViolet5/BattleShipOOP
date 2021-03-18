@@ -8,9 +8,6 @@ namespace battleship.gameElements
     {
         public SateOfField State { get; set; }
         public bool ContainShip { get; set; }
-
-
-
         public string Symbol
         {
 
@@ -48,30 +45,15 @@ namespace battleship.gameElements
                      
                     default:
                         return "W";
-                        
-
                 }
-
             }
-                                    
-
-
-
-
-
-
-
-            
         }
-
-
   
         public Field( SateOfField state = enums.SateOfField.Free, bool containShip = false)
         {
             this.State = state;
             this.ContainShip = containShip;
         }
-
     }
 }
 
