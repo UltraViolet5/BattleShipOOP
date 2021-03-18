@@ -15,6 +15,67 @@ namespace battleship
         
         }
 
+
+        public  Coordinates GetCoordinatesNew()
+        {
+            Coordinates userCoordinates = new Coordinates();
+            bool InputCorrectX = false;
+            bool InputCorrectY = false;
+            while (InputCorrectX)
+            {
+                System.Console.WriteLine("Get X coordinates: ");
+                string userInputXstring = Console.ReadLine();
+                int userInputX;
+                InputCorrectX = int.TryParse(userInputXstring, out userInputX);
+
+                if (CantConvertToInt(userInputXstring) == true)
+                {
+                    userInputX = CharCoordinateToInt(userInputXstring);
+                    userCoordinates.x = userInputX;
+                    InputCorrectX = true;
+
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect input !");
+                    InputCorrectX = false;
+                }
+            }
+            while (InputCorrectY)
+            {
+                System.Console.WriteLine("Get Y coordinates: ");
+                string userInputYstring = Console.ReadLine();
+                int userInputY;
+                InputCorrectY = int.TryParse(userInputYstring, out userInputY);
+                if (InputCorrectY == false)
+                {
+                    Console.WriteLine("Incorrect input !");
+                    InputCorrectY = false;
+                }
+                else
+                {
+                    InputCorrectY = true;
+                    userCoordinates.y = userInputY;
+                }
+            }
+
+            return userCoordinates;
+        }
+
+        private static bool CantConvertToInt(string char_nr)
+        {
+            int UserInputChar;
+            if (int.TryParse(char_nr, out UserInputChar))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        
         public Coordinates GetCoordinates()
         {
             Display display = new Display();
@@ -41,13 +102,19 @@ namespace battleship
 
                 }
 
-            /*
-            str_coordinates[1]; // druga koordynata cyfra
-            str_coordinates[2];
-            */
+            
             
             return coordinates;
         }
+        
+
+
+
+
+
+
+
+
         public enums.Position GetPosition()
         {
             Display display = new Display();
