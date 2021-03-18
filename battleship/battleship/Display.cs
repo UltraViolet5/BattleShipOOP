@@ -1,5 +1,7 @@
 ﻿using System;
 using battleship.enums;
+using battleship.gameElements;
+using System.Collections.Generic;
 
 namespace battleship
 {
@@ -72,6 +74,7 @@ namespace battleship
 
             }
         }
+        
         public void Board(Board Ocean_player)
         {
             /*
@@ -84,11 +87,9 @@ namespace battleship
             5 O O O O O O 5
               A B C D E F 
             */
-
+            //Console.Clear();
             int row = Ocean_player.ocean[0].Count; // pobiera z planszy playera a szerokość planszy szerokości muszą być takie same
 
-            // Pierwsza linia
-            Console.Write("PLAYER A\n");
             // ma być 7 spacji dla 5 znakowej planszy
             //jeżeli plansza jest większa od 5 np x 5+x to spacji ma być 2*x
 
@@ -243,6 +244,7 @@ namespace battleship
 
         public void Menu(DisplayText version)
         {
+            
             //version 0 Welcome text
             switch (version)
             {
@@ -312,14 +314,40 @@ namespace battleship
 
                     Console.WriteLine("*********************************************");
                     Console.WriteLine("*                                           *");
-                    Console.WriteLine("*    Put board size (5 - 10)                *");
+                    Console.WriteLine("*    Put board size (5 - 15)                *");
                     Console.WriteLine("*                                           *");
                     Console.WriteLine("*********************************************");
 
                     break;
+                case DisplayText.BattleshipBegin:
+                    Console.Clear();
+
+                    Console.WriteLine("______  ___ _____ _____ _      _____ _____ _   _ ___________ ");
+                    Console.WriteLine("| ___ \\/ _ \\_   _|_   _| |    |  ___/  ___| | | |_   _| ___ \\");
+                    Console.WriteLine("| |_/ / /_\\ \\| |   | | | |    | |__ \\ `--.| |_| | | | | |_/ /");
+                    Console.WriteLine("| ___ \\  _  || |   | | | |    |  __| `--. \\  _  | | | |  __/ ");
+                    Console.WriteLine("| |_/ / | | || |   | | | |____| |___/\\__/ / | | |_| |_| |    ");
+                    Console.WriteLine("\\____/\\_| |_/\\_/   \\_/ \\_____/\\____/\\____/\\_| |_/\\___/\\_|    ");
+                    Console.WriteLine("                                                             ");
+                    Console.WriteLine("                                                             ");
+                    Console.WriteLine("______ _____ _____ _____ _   _                               ");
+                    Console.WriteLine("| ___ \\  ___|  __ \\_   _| \\ | |                              ");
+                    Console.WriteLine("| |_/ / |__ | |  \\/ | | |  \\| |                              ");
+                    Console.WriteLine("| ___ \\  __|| | __  | | | . ` |                              ");
+                    Console.WriteLine("| |_/ / |___| |_\\ \\_| |_| |\\  |                              ");
+                    Console.WriteLine("\\____/\\____/ \\____/\\___/\\_| \\_/                              ");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    break;
 
             }
         }
+
+        public void Clear()
+        {
+            Console.Clear();
+        }
+
         public void Write(string text)
         {
             Console.WriteLine(text);

@@ -32,11 +32,11 @@ namespace battleship
                 switch (str_coordinates.Length)
                 {
                     case 2:
-                        coordinates.y = Convert.ToInt16(str_coordinates.Substring(1, 1));
+                        coordinates.y = Convert.ToInt16(str_coordinates.Substring(1, 1)) - 1 ;
                         break;
           
                     case 3:
-                        coordinates.y = Convert.ToInt16(str_coordinates.Substring(1, 2));
+                        coordinates.y = Convert.ToInt16(str_coordinates.Substring(1, 2)) - 1 ;
                         break;
 
                 }

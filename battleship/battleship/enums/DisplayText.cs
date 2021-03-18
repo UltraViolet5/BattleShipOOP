@@ -5,7 +5,8 @@
         WelcomeGraphic,
         WelcomeMenu,
         InfoAboutGame,
-        BoardSizeInput
+        BoardSizeInput,
+        BattleshipBegin
 
     }
 }
