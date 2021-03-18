@@ -332,6 +332,51 @@ namespace battleship
                     Console.WriteLine("");
                     break;
 
+                case DisplayText.PlayerA_Win:
+                    Console.WriteLine("");
+                    Console.WriteLine("  _____  _                                  ");
+                    Console.WriteLine(" |  __ \\| |                           /\\    ");
+                    Console.WriteLine(" | |__) | | __ _ _   _  ___ _ __     /  \\   ");
+                    Console.WriteLine(" |  ___/| |/ _` | | | |/ _ \\ '__|   / /\\ \\  ");
+                    Console.WriteLine(" | |    | | (_| | |_| |  __/ |     / ____ \\ ");
+                    Console.WriteLine(" |_|    |_|\\__,_|\\__, |\\___|_|    /_/    \\_\\");
+                    Console.WriteLine(" (_)              __/ |                     ");
+                    Console.WriteLine("  _ ___          |___/                      ");
+                    Console.WriteLine(" | / __|                                    ");
+                    Console.WriteLine(" | \\__ \\                                    ");
+                    Console.WriteLine(" |_|___/     ___                            ");
+                    Console.WriteLine(" \\ \\        / (_)                           ");
+                    Console.WriteLine("  \\ \\  /\\  / / _ _ __  _ __   ___ _ __      ");
+                    Console.WriteLine("   \\ \\/  \\/ / | | '_ \\| '_ \\ / _ \\ '__|     ");
+                    Console.WriteLine("    \\  /\\  /  | | | | | | | |  __/ |        ");
+                    Console.WriteLine("     \\/  \\/   |_|_| |_|_| |_|\\___|_|   ");
+                    Console.WriteLine("");
+
+                    break;
+                case DisplayText.PlayerB_Win:
+                    Console.WriteLine("");
+                    Console.WriteLine("  _____  _                         ____  ");
+                    Console.WriteLine(" |  __ \\| |                       |  _ \\ ");
+                    Console.WriteLine(" | |__) | | __ _ _   _  ___ _ __  | |_) |");
+                    Console.WriteLine(" |  ___/| |/ _` | | | |/ _ \\ '__| |  _ < ");
+                    Console.WriteLine(" | |    | | (_| | |_| |  __/ |    | |_) |");
+                    Console.WriteLine(" |_|    |_|\\__,_|\\__, |\\___|_|    |____/ ");
+                    Console.WriteLine(" (_)              __/ |                  ");
+                    Console.WriteLine("  _ ___          |___/                   ");
+                    Console.WriteLine(" | / __|                                 ");
+                    Console.WriteLine(" | \\__ \\                                 ");
+                    Console.WriteLine(" |_|___/     ___                         ");
+                    Console.WriteLine(" \\ \\        / (_)                        ");
+                    Console.WriteLine("  \\ \\  /\\  / / _ _ __  _ __   ___ _ __   ");
+                    Console.WriteLine("   \\ \\/  \\/ / | | '_ \\| '_ \\ / _ \\ '__|  ");
+                    Console.WriteLine("    \\  /\\  /  | | | | | | | |  __/ |     ");
+                    Console.WriteLine("     \\/  \\/   |_|_| |_|_| |_|\\___|_|   ");
+                    Console.WriteLine("");
+
+                    break;
+
+
+
             }
         }
 

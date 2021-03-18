@@ -133,6 +133,7 @@ namespace battleship
         public void Battleship()
         {
             Display display = new Display();
+            Input input = new Input();
 
             // Wyświetl ekran rozpoczęcia bitwy 
             display.Menu(DisplayText.BattleshipBegin);
@@ -147,17 +148,27 @@ namespace battleship
                 display.Clear();
                 CheckShips(enums.Players.SecondPlayer); // wprowadz zmiany w statkach na planszy gracza B
                 is_running = !IsWiner(enums.Players.FirstPlayer); // sprawdź czy gracz A jest zwycięzcą
-                display.Ocean(boardPlayerA, boardPlayerB);
-
-                if (is_running == false)
+                if (!is_running)
                 {
+                    display.Menu(DisplayText.PlayerA_Win);
+                    input.Pause();
                     break;
                 }
+                
+                
+                display.Ocean(boardPlayerA, boardPlayerB);
 
                 Round(Players.SecondPlayer);
                 display.Clear();
                 CheckShips(enums.Players.FirstPlayer); // wprowadz zmiany w statkach na planszy gracza A
                 is_running = !IsWiner(enums.Players.SecondPlayer); // sprawdź czy gracz B jest zwycięzcą
+                if (!is_running)
+                {
+                    display.Menu(DisplayText.PlayerB_Win);
+                    input.Pause();
+                    break;
+                }
+
                 display.Ocean(boardPlayerA, boardPlayerB);
 
             }
@@ -313,12 +324,38 @@ namespace battleship
 
         public bool IsWiner(enums.Players shoterPlayer)
         {
+            bool all_ship_sunk;
+            all_ship_sunk = true;
 
-            return false;
+            if (shoterPlayer == Players.SecondPlayer)
+            {
+                // jeżeli strzela gracz B
+                foreach (Ship ship in shipPlayerA)
+                {
+                    foreach (Coordinates coord in ship.GetShipCoordinates())
+                    {
+                        if (boardPlayerA.ocean[coord.y][coord.x].State != SateOfField.HitSunk)
+                        {
+                            all_ship_sunk = false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // jeżeli strzela gracz A
+                foreach (Ship ship in shipPlayerB)
+                {
+                    foreach (Coordinates coord in ship.GetShipCoordinates())
+                    {
+                        if (boardPlayerB.ocean[coord.y][coord.x].State != SateOfField.HitSunk)
+                        {
+                            all_ship_sunk = false;
+                        }
+                    }
+                }
+            }
+            return all_ship_sunk;
         }
-
-
-
-
     }
 }

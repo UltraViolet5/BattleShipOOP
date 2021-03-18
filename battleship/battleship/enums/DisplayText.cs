@@ -6,7 +6,9 @@
         WelcomeMenu,
         InfoAboutGame,
         BoardSizeInput,
-        BattleshipBegin
+        BattleshipBegin,
+        PlayerA_Win,
+        PlayerB_Win
 
     }
 }
