@@ -109,6 +109,10 @@ namespace battleship
                 display.Clear();
                 // wyświetl planszę ze statkami
                 display.Board(this.PutShipsOnBoard(boardPlayer, PlayerShips));
+                if (iterate == 3)
+                {
+                    input.Pause();
+                }
 
             }
             return PlayerShips;

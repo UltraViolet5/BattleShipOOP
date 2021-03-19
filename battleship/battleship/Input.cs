@@ -3,7 +3,7 @@ using battleship.gameElements;
 
 namespace battleship
 {
-    public class Input // klasa była statyczna 
+    public class Input // klasa była statyczna i powinna być statyczna
     {
         public int GetBoardSize()
         {
